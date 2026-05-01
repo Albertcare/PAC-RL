@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Towards Safe Extreme-Speed Autonomous Racing - Project Page</title>
+  <title>PAC-RL: Physics-Adaptive Curriculum Reinforcement Learning for Extreme-Speed Adversarial Autonomous Racing</title>
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
@@ -12,15 +12,28 @@
   
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/index.js"></script>
+  
+  <style>
+    /* 添加一点简单的样式让视频圆角更好看 */
+    .video-container video {
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .image-container img {
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
 
+  <!-- 1. 题目与匿名作者 -->
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Towards Safe Extreme-Speed Autonomous Racing: a Physics Adaptive Curriculum Reinforcement Learning Approach</h1>
+            <h1 class="title is-2 publication-title">PAC-RL: Physics-Adaptive Curriculum Reinforcement Learning for Extreme-Speed Adversarial Autonomous Racing</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">Anonymous Authors</span>
             </div>
@@ -30,27 +43,15 @@
     </div>
   </section>
 
-  <section class="hero teaser">
+  <!-- 2. 框架图 (Framework) -->
+  <section class="section pt-0">
     <div class="container is-max-desktop">
-      <div class="hero-body">
-        <video id="teaser" autoplay muted loop playsinline height="100%">
-          <source src="static/videos/banner_video.mp4" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered">
-          Overall performance of the proposed method in high-speed racing scenarios.
-        </h2>
-      </div>
-    </div>
-  </section>
-
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
+      <div class="columns is-centered">
+        <div class="column is-full-width has-text-centered image-container">
+          <img src="static/images/framework.png" alt="Physics-Adaptive Curriculum RL Framework" style="width:90%;">
           <div class="content has-text-justified">
             <p>
-              在这里粘贴你的论文摘要内容...
+            Illustration of the PAC-RL framework. The system integrates a feature enhancement mechanism utilizing statistical track features, and a progressive curriculum learning strategy with curvature-adaptive rewards to facilitate both extreme-speed racing and safe overtaking maneuvers.
             </p>
           </div>
         </div>
@@ -58,44 +59,103 @@
     </div>
   </section>
 
+  <!-- 3. 摘要 (Abstract) -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              <!-- 请在这里替换为你的真实论文摘要 -->
+              Reinforcement learning has shown great promise for autonomous driving. However, achieving stable and 
+              safe control at extreme speeds under highly dynamic and nonlinear conditions remains a critical 
+              challenge. In particular, high-speed racing amplifies control oscillations, while varying track 
+              geometries and competitive interactions introduce conflicting objectives between speed maximization 
+              and safety preservation. To address these challenges, we propose a Physics-Adaptive Curriculum 
+              Reinforcement Learning (PAC-RL) framework for extreme-speed autonomous racing. First, we propose 
+              a state representation integrating feature decoupling and minimum curvature guidance with statistical 
+              priors to enhance anticipatory cornering awareness and suppress high-speed control oscillations. 
+              Second, we develop a physics-adaptive reward formulation that incorporates curvature-aware weighting 
+              and safe switching based on time-to-collision, achieving continuous and conflict-free coordination 
+              between time-trial efficiency and overtaking safety. Third, we introduce a progressive curriculum 
+              learning paradigm that facilitates structured policy evolution from basic stabilization to high-speed 
+              cornering and adversarial overtaking. Extensive experiments demonstrate that the proposed PAC-RL 
+              framework achieves higher racing speeds, improved control stability, and more reliable overtaking 
+              performance compared to baseline methods, with real-time inference capability. Video demonstrations 
+              are available at https://albertcare.github.io/PAC-RL/.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Racing 视频 (单独占据较宽的一行) -->
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Methodology</h2>
+      <h2 class="title is-3 has-text-centered">High-Speed Racing Performance</h2>
       <div class="columns is-centered">
-        <div class="column is-full-width">
-          <img src="static/images/architecture.png" alt="Network Architecture" style="width:100%; border-radius: 10px;">
-          <p class="mt-3">
-            Brief description of your dual-branch feature extraction architecture.
+        <div class="column is-10 video-container">
+          <video autoplay muted loop playsinline width="100%">
+            <source src="static/videos/racing.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered mt-3">
+            Demonstration of the PAC-RL agent maintaining stability and high speed on the racing track.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- 5. Overtaking 视频 (2x2 矩阵排列) -->
+  <section class="section bg-light">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Experimental Results</h2>
+      <h2 class="title is-3 has-text-centered">Adversarial Overtaking Maneuvers</h2>
+      <p class="has-text-centered mb-5">
+        The agent successfully performs overtaking maneuvers against opponent vehicles under different conditions.
+      </p>
       
-      <div class="columns is-centered">
-        <div class="column">
-          <h3 class="title is-4">Obstacle Avoidance</h3>
-          <video poster="" autoplay muted loop playsinline height="100%">
-            <source src="static/videos/experiment_1.mp4" type="video/mp4">
+      <!-- 使用 is-multiline 实现多行，is-half 让每个视频占 50% 宽度 -->
+      <div class="columns is-multiline is-centered video-container">
+        
+        <!-- 左上视频 -->
+        <div class="column is-half">
+          <video autoplay muted loop playsinline width="100%">
+            <source src="static/videos/overtake1.mp4" type="video/mp4">
           </video>
-          <p>Description of the obstacle avoidance experiment.</p>
+          <!-- <p class="has-text-centered mt-2 is-size-6">Scenario 1</p> -->
         </div>
         
-        <div class="column">
-          <h3 class="title is-4">Overtaking Maneuver</h3>
-          <video poster="" autoplay muted loop playsinline height="100%">
-            <source src="static/videos/experiment_2.mp4" type="video/mp4">
+        <!-- 右上视频 -->
+        <div class="column is-half">
+          <video autoplay muted loop playsinline width="100%">
+            <source src="static/videos/overtake2.mp4" type="video/mp4">
           </video>
-          <p>Description of the high-speed overtaking maneuver.</p>
+          <!-- <p class="has-text-centered mt-2 is-size-6">Scenario 2</p> -->
         </div>
+        
+        <!-- 左下视频 -->
+        <div class="column is-half">
+          <video autoplay muted loop playsinline width="100%">
+            <source src="static/videos/overtake3.mp4" type="video/mp4">
+          </video>
+          <!-- <p class="has-text-centered mt-2 is-size-6">Scenario 3</p> -->
+        </div>
+        
+        <!-- 右下视频 -->
+        <div class="column is-half">
+          <video autoplay muted loop playsinline width="100%">
+            <source src="static/videos/overtake4.mp4" type="video/mp4">
+          </video>
+          <!-- <p class="has-text-centered mt-2 is-size-6">Scenario 4</p> -->
+        </div>
+
       </div>
     </div>
   </section>
 
+  <!-- 页脚 -->
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
