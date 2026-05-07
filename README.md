@@ -1,4 +1,4 @@
-# PAC-RL: Physics-Adaptive Curriculum Reinforcement Learning for Extreme-Speed Adversarial Autonomous Racing
+# PAC-RL: Physics-Adaptive Curriculum Reinforcement Learning for Safe Extreme-Speed Autonomous Racing
 
 This repository contains the source code for the anonymous project page of the paper: **"PAC-RL: Physics-Adaptive Curriculum Reinforcement Learning for Safe Extreme-Speed Autonomous Racing"**. 
 
